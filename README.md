@@ -15,4 +15,4 @@ Next I go to https://pypi.org/project/OpenCobolIDE/, click ```Download files```,
 
 I ensure that I can run pip from Windows Command Prompt by entering command ```py -m pip --version``` after which I ensure pip, setuptools, and wheel are up to date with command ```py -m pip install --upgrade pip setuptools wheel``` (not sure if this is necessary).
 
-I install ```OpenCobolIDE``` with command ```py -m pip install ./downloads/OpenCobolIDE-4.7.6.tar.gz```.
+I try to install ```OpenCobolIDE``` with command ```py -m pip install .%USERPROFILE%\Downloads/OpenCobolIDE-4.7.6.tar.gz```. error
