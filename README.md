@@ -98,3 +98,24 @@ First I iteratively brainstorm with **ChatGPT** about what is a business-grade h
       * Dependencies: None
       ******************************************************************
 ```
+
+Next **ChatGPT** suggests to add **IDENTIFICATION DIVISION** and **PROGRAM-ID**. It is apparently very important in COBOL to add periods (**.**) after divisions, sections, paragraphs, and statements to terminate them.
+
+I make the following additions to the program—**ChatGPT** approves:
+
+```
+      ******************************************************************
+      * Author: Pekka Surname
+      * Date: 2025-10-07
+      * Version: 1.0
+      * Purpose: A program that greets the customer.
+      * Compiler: cobc
+      * Remarks: Simple tutorial example for learning COBOL.
+      *          Accepts customer name and displays a greeting.
+      * Dependencies: None
+      ******************************************************************
+       
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. CUSTOMER-GREETING.
+
+```
