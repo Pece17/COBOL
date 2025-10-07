@@ -30,6 +30,8 @@ The terminal outputs the following:
             DISPLAY "Hello world"
             STOP RUN.
        END PROGRAM YOUR-PROGRAM-NAME.
+
+
 ```
 
 I run the program by clicking the ▶️ (play) button, and get the following output:
@@ -62,6 +64,8 @@ I put my first name as the author and change the text to be displayed.
             DISPLAY "I'm learning COBOL for the first time."
             STOP RUN.
        END PROGRAM YOUR-PROGRAM-NAME.
+
+
 ```
 
 I run the program and get the following output:
