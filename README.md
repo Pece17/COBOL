@@ -1,6 +1,6 @@
 # COBOL
 
-A project for learning the basics of COBOL (Common Business-Oriented Language). The purpose of this project is to learn COBOL in a way that is, in theory, applicable in business environments.
+A project for learning the basics of COBOL (Common Business-Oriented Language). The purpose of this project is to learn to write production-grade COBOL in a way that is, in theory, applicable in business environments.
 
 
 ## Software Installation and Setup
@@ -80,4 +80,7 @@ Process finished with exit code 0
 **OpenCobolIDE** seems to work correctly, so I can move on to more complex exercises.
 
 
-## Placeholder Title
+## Creating a Customer Greeting Program
+
+Let's try to write a simple program for an imaginary bank that asks the customer to enter their name in the program.
+
