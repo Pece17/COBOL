@@ -338,5 +338,55 @@ Hello, Pekka                         !
 Process finished with exit code 0
 ```
 
-Looks alright apart from the misplaced exclamation mark (**!**).
+Looks alright apart from the misplaced exclamation mark (**!**). **ChatGPT** says it's a classic **COBOL** string spacing issue: in **COBOL**, each **DISPLAY** argument is treated as a fixed-length field. **CUSTOMER-NAME** is defined as **01  CUSTOMER-NAME  PIC X(30)** and **PIC X(30)** always reserves 30 characters, even if the user types only 5 (Pekka). The literal **"Hello, "** is displayed, then the entire 30-character field of **CUSTOMER-NAME**, including trailing spaces, and then the **"!"**. That's why the **!** appears far to the right.
 
+**ChatGPT** recommends: use **FUNCTION TRIM** to keep enterprise-style coding and allow any-length input up to 30 chars. I make the change to the program:
+
+```
+      ******************************************************************
+      * Author: Pekka Surname
+      * Date: 2025-10-07
+      * Version: 1.0
+      * Purpose: A program that greets the customer.
+      * Compiler: cobc
+      * Remarks: Simple tutorial example for learning COBOL.
+      *          Accepts customer name and displays a greeting.
+      * Dependencies: None
+      ******************************************************************
+       
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. CUSTOMER-GREETING.
+       
+       ENVIRONMENT DIVISION.
+       
+       INPUT-OUTPUT SECTION.
+      * No external files used in this simple example
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01  CUSTOMER-NAME        PIC X(30).
+       
+       PROCEDURE DIVISION.
+       MAIN-PROCEDURE.
+           DISPLAY "Please enter your name: ".
+           ACCEPT CUSTOMER-NAME.
+           DISPLAY "Hello, " FUNCTION TRIM(CUSTOMER-NAME) "!".
+           STOP RUN.
+
+```
+
+Now when I run the program and enter my name, I get the following output:
+
+```
+C:\Users\Business\bin\CUSTOMER-GREETING.exe 
+Please enter your name: 
+Pekka
+Hello, Pekka!
+
+Process finished with exit code 0
+```
+
+The program now works correctly. A stunning success that concludes this exercise.
+
+
+## Placeholder Title (developing the previous program further? Menus or loops, conditional greetings, age?)
