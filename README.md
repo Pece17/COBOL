@@ -164,3 +164,31 @@ Per ChatGPT: even if your program doesn't use files yet, it's standard to includ
       * No external files used in this simple example
 
 ```
+
+Per ChatGPT: after **INPUT-OUTPUT SECTION**, add **DATA DIVISION**, where all program data is defined, and **WORKING-STORAGE SECTION** for variables that retain their values while the program runs (like the customer's name).
+
+```
+      ******************************************************************
+      * Author: Pekka Surname
+      * Date: 2025-10-07
+      * Version: 1.0
+      * Purpose: A program that greets the customer.
+      * Compiler: cobc
+      * Remarks: Simple tutorial example for learning COBOL.
+      *          Accepts customer name and displays a greeting.
+      * Dependencies: None
+      ******************************************************************
+       
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. CUSTOMER-GREETING.
+       
+       ENVIRONMENT DIVISION.
+       
+       INPUT-OUTPUT SECTION.
+      * No external files used in this simple example
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+
+```
+
