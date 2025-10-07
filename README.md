@@ -319,8 +319,24 @@ Per **ChatGPT**: we'll now take the user's input and display a personalized gree
 
 ```
 
-ChatGPT claims the program is now enterprise-ready. Let's try to run it:
+**ChatGPT** claims the program is now enterprise-ready. We'll see about that, let's run it:
+
+```
+C:\Users\Business\bin\CUSTOMER-GREETING.exe 
+Please enter your name: 
 
 ```
 
+I enter my name, and get the following output:
+
 ```
+C:\Users\Business\bin\CUSTOMER-GREETING.exe 
+Please enter your name: 
+Pekka
+Hello, Pekka                         !
+
+Process finished with exit code 0
+```
+
+Looks alright apart from the misplaced exclamation mark (**!**).
+
