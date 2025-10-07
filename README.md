@@ -220,7 +220,7 @@ Per **ChatGPT**: next we define **CUSTOMER-NAME** variable in **WORKING-STORAGE 
 
 ```
 
-Per **ChatGPT**: after your **WORKING-STORAGE SECTION**, add **PROCEDURE DIVISION**, which starts the logic section of your program, and **MAIN-PROCEDURE**, which is a named paragraph where your main statements will go. Periods at the end of each line are required. My program now looks like this:
+Per **ChatGPT**: after your **WORKING-STORAGE SECTION**, add **PROCEDURE DIVISION**, which starts the logic section of your program, and **MAIN-PROCEDURE**, which is a named paragraph where your main statements will go. Periods at the end of each line are required in **COBOL**. My program now looks like this:
 
 ```
       ******************************************************************
@@ -250,3 +250,37 @@ Per **ChatGPT**: after your **WORKING-STORAGE SECTION**, add **PROCEDURE DIVISIO
        MAIN-PROCEDURE.
 
 ```
+
+Per **ChatGPT**: next step is asking the customer for their name using **ACCEPT**, following professional **COBOL** style. **DISPLAY** = shows a message on the terminal, **ACCEPT** = waits for the user to type input and stores it in **CUSTOMER-NAME**. Proper indentation in **COBOL** (6–12 spaces after the paragraph name) = standard professional style. Though, I'll only put 4 spaces for the indentation because it works well with **OpenCobolIDE**
+
+```
+      ******************************************************************
+      * Author: Pekka Surname
+      * Date: 2025-10-07
+      * Version: 1.0
+      * Purpose: A program that greets the customer.
+      * Compiler: cobc
+      * Remarks: Simple tutorial example for learning COBOL.
+      *          Accepts customer name and displays a greeting.
+      * Dependencies: None
+      ******************************************************************
+       
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. CUSTOMER-GREETING.
+       
+       ENVIRONMENT DIVISION.
+       
+       INPUT-OUTPUT SECTION.
+      * No external files used in this simple example
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01  CUSTOMER-NAME        PIC X(30).
+       
+       PROCEDURE DIVISION.
+       MAIN-PROCEDURE.
+           DISPLAY "Please enter your name: "
+           ACCEPT CUSTOMER-NAME
+
+```
+
