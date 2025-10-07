@@ -386,7 +386,45 @@ Hello, Pekka!
 Process finished with exit code 0
 ```
 
-The program now works correctly. A stunning success that concludes this exercise.
+The program now works correctly.
+
+Finally, we add **END PROGRAM <program-name>** that explicitly marks the end of the program in **COBOL**, as per **ChatGPT**'s recommendation. It is optional in very simple programs but recommended in professional/enterprise **COBOL** for clarity and maintainability. I make the change to the code:
+
+```
+      ******************************************************************
+      * Author: Pekka Surname
+      * Date: 2025-10-07
+      * Version: 1.0
+      * Purpose: A program that greets the customer.
+      * Compiler: cobc
+      * Remarks: Simple tutorial example for learning COBOL.
+      *          Accepts customer name and displays a greeting.
+      * Dependencies: None
+      ******************************************************************
+       
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. CUSTOMER-GREETING.
+       
+       ENVIRONMENT DIVISION.
+       
+       INPUT-OUTPUT SECTION.
+      * No external files used in this simple example
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01  CUSTOMER-NAME        PIC X(30).
+       
+       PROCEDURE DIVISION.
+       MAIN-PROCEDURE.
+           DISPLAY "Please enter your name: ".
+           ACCEPT CUSTOMER-NAME.
+           DISPLAY "Hello, " FUNCTION TRIM(CUSTOMER-NAME) "!".
+           STOP RUN.
+       END PROGRAM CUSTOMER-GREETING.
+
+```
+
+The program still works correctly. A stunning success that concludes this exercise.
 
 
 ## Placeholder Title (developing the previous program further? Menus or loops, conditional greetings, age?)
