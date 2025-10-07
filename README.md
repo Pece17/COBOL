@@ -32,7 +32,7 @@ The terminal outputs the following:
        END PROGRAM YOUR-PROGRAM-NAME.
 ```
 
-I run the program by clicking the ▶️ button, and get the following output:
+I run the program by clicking the ▶️ (play) button, and get the following output:
 
 ```
 C:\Users\Business\bin\TEST.exe 
@@ -40,3 +40,5 @@ Hello world
 
 Process finished with exit code 0
 ```
+
+The program works correctly.
