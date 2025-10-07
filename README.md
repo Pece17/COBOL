@@ -192,3 +192,61 @@ Per ChatGPT: after **INPUT-OUTPUT SECTION**, add **DATA DIVISION**, where all pr
 
 ```
 
+Per **ChatGPT**: next we define **CUSTOMER-NAME** variable in **WORKING-STORAGE SECTION**. **01** = top-level variable (highest level in hierarchy), **CUSTOMER-NAME** = the name of the variable, and **PIC X(30)** = defines it as alphanumeric, up to 30 characters. This is the variable that will store the customer's input.
+
+```
+      ******************************************************************
+      * Author: Pekka Surname
+      * Date: 2025-10-07
+      * Version: 1.0
+      * Purpose: A program that greets the customer.
+      * Compiler: cobc
+      * Remarks: Simple tutorial example for learning COBOL.
+      *          Accepts customer name and displays a greeting.
+      * Dependencies: None
+      ******************************************************************
+       
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. CUSTOMER-GREETING.
+       
+       ENVIRONMENT DIVISION.
+       
+       INPUT-OUTPUT SECTION.
+      * No external files used in this simple example
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01  CUSTOMER-NAME        PIC X(30).
+
+```
+
+Per **ChatGPT**: after your **WORKING-STORAGE SECTION**, add **PROCEDURE DIVISION**, which starts the logic section of your program, and **MAIN-PROCEDURE**, which is a named paragraph where your main statements will go. Periods at the end of each line are required. My program now looks like this:
+
+```
+      ******************************************************************
+      * Author: Pekka Surname
+      * Date: 2025-10-07
+      * Version: 1.0
+      * Purpose: A program that greets the customer.
+      * Compiler: cobc
+      * Remarks: Simple tutorial example for learning COBOL.
+      *          Accepts customer name and displays a greeting.
+      * Dependencies: None
+      ******************************************************************
+       
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. CUSTOMER-GREETING.
+       
+       ENVIRONMENT DIVISION.
+       
+       INPUT-OUTPUT SECTION.
+      * No external files used in this simple example
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01  CUSTOMER-NAME        PIC X(30).
+       
+       PROCEDURE DIVISION.
+       MAIN-PROCEDURE.
+
+```
