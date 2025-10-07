@@ -1,6 +1,6 @@
 # COBOL
 
-A project for learning the basics of COBOL (Common Business-Oriented Language). The purpose of this project is to learn to write production-grade COBOL in a way that is, in theory, applicable in business environments.
+A project for learning the basics of **COBOL** (Common Business-Oriented Language). The purpose of this project is to learn to write production-grade **COBOL** in a way that is, in theory, applicable in business environments.
 
 
 ## Software Installation and Setup
@@ -84,7 +84,7 @@ Process finished with exit code 0
 
 Let's try to write a simple program for an imaginary bank that asks the customer to enter their name in the program. I start by creating a new program from scratch called **CUSTOMER-GREETING.cbl**.
 
-First I iteratively brainstorm with **ChatGPT** about what is a business-grade header in COBOL. The following is acceptable according to **ChatGPT**.
+First I iteratively brainstorm with **ChatGPT** about what is a business-grade header in **COBOL**. The following is acceptable according to **ChatGPT**.
 
 ```
       ******************************************************************
@@ -99,7 +99,7 @@ First I iteratively brainstorm with **ChatGPT** about what is a business-grade h
       ******************************************************************
 ```
 
-Next **ChatGPT** suggests to add **IDENTIFICATION DIVISION** and **PROGRAM-ID**. It is apparently very important in COBOL to add periods (**.**) after divisions, sections, paragraphs, and statements to terminate them.
+Next **ChatGPT** suggests to add **IDENTIFICATION DIVISION** and **PROGRAM-ID**. It is apparently very important in **COBOL** to add periods (**.**) after divisions, sections, paragraphs, and statements to terminate them.
 
 I make the following additions to the program—**ChatGPT** approves:
 
