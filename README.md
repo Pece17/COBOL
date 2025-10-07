@@ -82,5 +82,19 @@ Process finished with exit code 0
 
 ## Creating a Customer Greeting Program
 
-Let's try to write a simple program for an imaginary bank that asks the customer to enter their name in the program.
+Let's try to write a simple program for an imaginary bank that asks the customer to enter their name in the program. I start by creating a new program from scratch called **CUSTOMER-GREETING.cbl**.
 
+First I iteratively brainstorm with **ChatGPT** about what is a business-grade header in COBOL. The following is acceptable according to **ChatGPT**.
+
+```
+      ******************************************************************
+      * Author: Pekka Surname
+      * Date: 2025-10-07
+      * Version: 1.0
+      * Purpose: A program that greets the customer.
+      * Compiler: cobc
+      * Remarks: Simple tutorial example for learning COBOL.
+      *          Accepts customer name and displays a greeting.
+      * Dependencies: None
+      ******************************************************************
+```
