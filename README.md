@@ -1,11 +1,11 @@
 # COBOL
 
-A project for learning the basics of COBOL (Common Business-Oriented Language).
+A project for learning the basics of COBOL (Common Business-Oriented Language). The purpose of this project is to learn COBOL in a way that is, in theory, applicable in business environments.
 
 
 ## Software Installation and Setup
 
-I'm using [this YouTube tutorial](https://www.youtube.com/watch?v=LImuEAmVkIw) by **Kumar ITChannel** as the basis of this project.
+I'm using [this YouTube tutorial](https://www.youtube.com/watch?v=LImuEAmVkIw) by **Kumar ITChannel** as the basis of this project. I'm also using **ChatGPT** as a teacher during this project.
 
 First I go to https://pypi.org/project/OpenCobolIDE/ and from there open link https://launchpad.net/cobcide/+download for the Windows installer. I download **OpenCobolIDE-4.7.6_Setup.exe**, which is the Windows installer, run it as administrator, and go through the installation.
 
