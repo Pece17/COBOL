@@ -9,7 +9,7 @@ I'm using [this YouTube tutorial](https://www.youtube.com/watch?v=LImuEAmVkIw) b
 
 First I go to https://pypi.org/project/OpenCobolIDE/ and from there open link https://launchpad.net/cobcide/+download for the Windows installer. I download **OpenCobolIDE-4.7.6_Setup.exe**, which is the Windows installer, run it as administrator, and go through the installation.
 
-After the installation is complete, I open the **OpenCobolIDE** program, click **New file**, leave **Program** as the **Template:**, and name the file as **TEST**. I don't change any other parameters, and I select **OK**.
+After the installation is complete, I open the **OpenCobolIDE** program, click **New file**, leave **Program** as the **Template:** and leave **.cbl** as the file extension, and name the file as **TEST**. I don't change any other parameters, and I select **OK**.
 
 The terminal outputs the following:
 
@@ -45,17 +45,17 @@ Process finished with exit code 0
 
 The program works correctly.
 
-I put my first name as the author and change the text to be displayed.
+I put my first name as the author and change the date, purpose, **PROGRAM-ID.**, and the text to be displayed.
 
 ```
       ******************************************************************
       * Author: Pekka
-      * Date:
-      * Purpose:
+      * Date: 2025-10-07
+      * Purpose: Testing COBOL
       * Tectonics: cobc
       ******************************************************************
        IDENTIFICATION DIVISION.
-       PROGRAM-ID. YOUR-PROGRAM-NAME.
+       PROGRAM-ID. TEST.
        DATA DIVISION.
        FILE SECTION.
        WORKING-STORAGE SECTION.
@@ -63,7 +63,7 @@ I put my first name as the author and change the text to be displayed.
        MAIN-PROCEDURE.
             DISPLAY "I'm learning COBOL for the first time."
             STOP RUN.
-       END PROGRAM YOUR-PROGRAM-NAME.
+       END PROGRAM TEST.
 
 
 ```
