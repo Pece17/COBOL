@@ -119,3 +119,48 @@ I make the following additions to the program—**ChatGPT** approves:
        PROGRAM-ID. CUSTOMER-GREETING.
 
 ```
+
+Next we'll add **ENVIRONMENT DIVISION** which tells **COBOL** about the environment your program runs in, like input/output devices or files. Even if you don’t define files yet, including this division is standard practice in business **COBOL** programs.
+
+```
+      ******************************************************************
+      * Author: Pekka Surname
+      * Date: 2025-10-07
+      * Version: 1.0
+      * Purpose: A program that greets the customer.
+      * Compiler: cobc
+      * Remarks: Simple tutorial example for learning COBOL.
+      *          Accepts customer name and displays a greeting.
+      * Dependencies: None
+      ******************************************************************
+       
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. CUSTOMER-GREETING.
+       
+       ENVIRONMENT DIVISION.
+
+```
+
+Per ChatGPT: even if your program doesn't use files yet, it's standard to include the **INPUT-OUTPUT SECTION** under **ENVIRONMENT DIVISION** to show where files or terminals would be defined. The asterisk (*) indicates a comment line, so it doesn't affect compilation. This prepares your program to scale later if you decide to read/write files.
+
+```
+      ******************************************************************
+      * Author: Pekka Surname
+      * Date: 2025-10-07
+      * Version: 1.0
+      * Purpose: A program that greets the customer.
+      * Compiler: cobc
+      * Remarks: Simple tutorial example for learning COBOL.
+      *          Accepts customer name and displays a greeting.
+      * Dependencies: None
+      ******************************************************************
+       
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. CUSTOMER-GREETING.
+       
+       ENVIRONMENT DIVISION.
+       
+       INPUT-OUTPUT SECTION.
+      * No external files used in this simple example
+
+```
