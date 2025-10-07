@@ -251,7 +251,7 @@ Per **ChatGPT**: after your **WORKING-STORAGE SECTION**, add **PROCEDURE DIVISIO
 
 ```
 
-Per **ChatGPT**: next step is asking the customer for their name using **ACCEPT**, following professional **COBOL** style. **DISPLAY** = shows a message on the terminal, **ACCEPT** = waits for the user to type input and stores it in **CUSTOMER-NAME**. Proper indentation in **COBOL** (6–12 spaces after the paragraph name) = standard professional style. Though, I'll only put 4 spaces for the indentation because it works well with **OpenCobolIDE**
+Per **ChatGPT**: next step is asking the customer for their name using **ACCEPT**, following professional **COBOL** style. **DISPLAY** = shows a message on the terminal, **ACCEPT** = waits for the user to type input and stores it in **CUSTOMER-NAME**. Proper indentation in **COBOL** (6–12 spaces after the paragraph name) = standard professional style. Though, I'll only use 4 spaces for the indentation because it works well with **OpenCobolIDE**.
 
 ```
       ******************************************************************
@@ -279,8 +279,48 @@ Per **ChatGPT**: next step is asking the customer for their name using **ACCEPT*
        
        PROCEDURE DIVISION.
        MAIN-PROCEDURE.
-           DISPLAY "Please enter your name: "
-           ACCEPT CUSTOMER-NAME
+           DISPLAY "Please enter your name: ".
+           ACCEPT CUSTOMER-NAME.
 
 ```
 
+Per **ChatGPT**: we'll now take the user's input and display a personalized greeting. It combines the literal "Hello, " with the value stored in **CUSTOMER-NAME**. **STOP RUN.** ends the program.
+
+```
+      ******************************************************************
+      * Author: Pekka Surname
+      * Date: 2025-10-07
+      * Version: 1.0
+      * Purpose: A program that greets the customer.
+      * Compiler: cobc
+      * Remarks: Simple tutorial example for learning COBOL.
+      *          Accepts customer name and displays a greeting.
+      * Dependencies: None
+      ******************************************************************
+       
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. CUSTOMER-GREETING.
+       
+       ENVIRONMENT DIVISION.
+       
+       INPUT-OUTPUT SECTION.
+      * No external files used in this simple example
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01  CUSTOMER-NAME        PIC X(30).
+       
+       PROCEDURE DIVISION.
+       MAIN-PROCEDURE.
+           DISPLAY "Please enter your name: ".
+           ACCEPT CUSTOMER-NAME.
+           DISPLAY "Hello, " CUSTOMER-NAME "!".
+           STOP RUN.
+
+```
+
+ChatGPT claims the program is now enterprise-ready. Let's try to run it:
+
+```
+
+```
