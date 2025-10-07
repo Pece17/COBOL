@@ -42,3 +42,38 @@ Process finished with exit code 0
 ```
 
 The program works correctly.
+
+I put my first name as the author and change the text to be displayed.
+
+```
+      ******************************************************************
+      * Author: Pekka
+      * Date:
+      * Purpose:
+      * Tectonics: cobc
+      ******************************************************************
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. YOUR-PROGRAM-NAME.
+       DATA DIVISION.
+       FILE SECTION.
+       WORKING-STORAGE SECTION.
+       PROCEDURE DIVISION.
+       MAIN-PROCEDURE.
+            DISPLAY "I'm learning COBOL for the first time."
+            STOP RUN.
+       END PROGRAM YOUR-PROGRAM-NAME.
+```
+
+I run the program and get the following output:
+
+```
+C:\Users\Business\bin\TEST.exe 
+I'm learning COBOL for the first time.
+
+Process finished with exit code 0
+```
+
+**OpenCobolIDE** seems to work correctly, so I can move on to more complex exercises.
+
+
+## Placeholder Title
