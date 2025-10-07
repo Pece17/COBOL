@@ -7,7 +7,7 @@ A project for learning the basics of COBOL (Common Business-Oriented Language).
 
 I'm using [this YouTube tutorial](https://www.youtube.com/watch?v=LImuEAmVkIw) by **Kumar ITChannel** as the basis of this project.
 
-First I go https://pypi.org/project/OpenCobolIDE/ and from there open link https://launchpad.net/cobcide/+download for the Windows installer. I download **OpenCobolIDE-4.7.6_Setup.exe**, which is the Windows installer, run it as administrator, and go through the installation.
+First I go to https://pypi.org/project/OpenCobolIDE/ and from there open link https://launchpad.net/cobcide/+download for the Windows installer. I download **OpenCobolIDE-4.7.6_Setup.exe**, which is the Windows installer, run it as administrator, and go through the installation.
 
 After the installation is complete, I open the **OpenCobolIDE** program, click **New file**, leave **Program** as the **Template:**, and name the file as **TEST**. I don't change any other parameters, and I select **OK**.
 
