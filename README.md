@@ -8,7 +8,7 @@ A project for learning the basics of **COBOL** (Common Business-Oriented Languag
 - [Software Installation and Setup](https://github.com/Pece17/COBOL?tab=readme-ov-file#software-installation-and-setup)
 - [Creating a Customer Greeting Program](https://github.com/Pece17/COBOL?tab=readme-ov-file#creating-a-customer-greeting-program)
 - [Creating a "Mini Bank"](https://github.com/Pece17/COBOL/tree/main?tab=readme-ov-file#creating-a-mini-bank)
-     - [Adding User Accounts and Balances in **WORKING-STORAGE**]
+     - [Adding User Accounts and Balances in **WORKING-STORAGE**](https://github.com/Pece17/COBOL?tab=readme-ov-file#adding-user-accounts-and-balances-in-working-storage)
 
 
 ## Software Installation and Setup
