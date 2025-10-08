@@ -438,5 +438,19 @@ The program still works correctly. A stunning success that concludes this exerci
 
 I want to build on the program I created in the previous section and make additions that in theory could have real-world business applications.
 
-I ask **ChatGPT** for suggestions, and this is what I get: add input validation, a looping menu, subroutines/paragraphs, date and time handling, file I/O (input/output), conditional logic based on data, use of copybooks, structured error handling and logging, and data storage. I'm personally also thinking about the abilities to withdraw and deposit money and to check balance, so I suppose the goal would be to make a "mini bank". I'm thinking a few users that require passwords for login.
+I ask **ChatGPT** for suggestions, and this is what I get:
+
+- input validation
+- a looping menu
+- subroutines/paragraphs
+- date and time handling
+- file I/O (input/output)
+- conditional logic based on data
+- use of copybooks
+- structured error handling and logging
+- data storage
+
+I'm personally also thinking about the abilities to withdraw and deposit money and to check balance, so I suppose the goal would be to make a "mini bank". I'm thinking a few users that require passwords for login. Let's get started.
+
+I create a new file called **MINI-BANK.cbl** and paste the code of **CUSTOMER-GREETING.cbl** in it.
 
