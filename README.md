@@ -453,7 +453,7 @@ I ask **ChatGPT** for suggestions, and this is what I get:
 
 I'm personally also thinking about the abilities to withdraw and deposit money, to transfer money to other users' accounts, and to check balance, so I suppose the goal would be to make a "mini bank". I'm thinking a few users that require passwords for login. Let's get started.
 
-I create a new file called **MINI-BANK.cbl** and paste the code of **CUSTOMER-GREETING.cbl** in it. I make a few changes to the header:
+I create a new file called **MINI-BANK.cbl** and paste the code of **CUSTOMER-GREETING.cbl** in it. I make a few changes to the header and change the program name:
 
 ```
       ******************************************************************
@@ -468,7 +468,7 @@ I create a new file called **MINI-BANK.cbl** and paste the code of **CUSTOMER-GR
       ******************************************************************
        
        IDENTIFICATION DIVISION.
-       PROGRAM-ID. CUSTOMER-GREETING.
+       PROGRAM-ID. MINI-BANK.
        
        ENVIRONMENT DIVISION.
        
@@ -485,10 +485,69 @@ I create a new file called **MINI-BANK.cbl** and paste the code of **CUSTOMER-GR
            ACCEPT CUSTOMER-NAME.
            DISPLAY "Hello, " FUNCTION TRIM(CUSTOMER-NAME) "!".
            STOP RUN.
-       END PROGRAM CUSTOMER-GREETING.
+       END PROGRAM MINI-BANK.
 
 ```
 
 
 ### Adding User Accounts and Balances in **WORKING-STORAGE**
+
+Per **ChatGPT**: since we don't have files yet, we'll keep a small, fixed set of users in memory. Each user will have:
+
+- Username (**CUSTOMER-NAME**)
+- Password (**CUSTOMER-PASSWORD**)
+- Balance (**ACCOUNT-BALANCE**)
+
+Here's how we can define that in the **WORKING-STORAGE SECTION**:
+
+```
+      ******************************************************************
+      * Author: Pekka Surname
+      * Date: 2025-10-07
+      * Version: 1.0
+      * Purpose: A program that works as a miniature banking system.
+      * Compiler: cobc
+      * Remarks: A simple tutorial example for learning COBOL.
+      *          A small banking system with various account operations.
+      * Dependencies: None
+      ******************************************************************
+       
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. MINI-BANK.
+       
+       ENVIRONMENT DIVISION.
+       
+       INPUT-OUTPUT SECTION.
+      * No external files used in this simple example
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       
+       01  NUM-USERS        PIC 9 VALUE 3.
+       01  USER-INDEX       PIC 9 VALUE 1.
+       
+       01  USER-TABLE.
+           05 USERS OCCURS 3 TIMES.
+              10 CUSTOMER-NAME      PIC X(30).
+              10 CUSTOMER-PASSWORD  PIC X(10).
+              10 ACCOUNT-BALANCE    PIC 9(6)V99 VALUE 0.
+       
+       PROCEDURE DIVISION.
+       MAIN-PROCEDURE.
+           DISPLAY "Please enter your name: ".
+           ACCEPT CUSTOMER-NAME.
+           DISPLAY "Hello, " FUNCTION TRIM(CUSTOMER-NAME) "!".
+           STOP RUN.
+       END PROGRAM MINI-BANK.
+
+```
+
+- **NUM-USERS** = how many users we have (3 for now).
+- **USER-TABLE** is an array of 3 users.
+- Each user has a name, password, and balance.
+- **USER-INDEX** will help us know which user is currently logged in.
+
+Now I get the following error: **'CUSTOMER-NAME' requires one subscript**.
+
+**ChatGPT** says: you currently have a user table defined, but you’re trying to use **CUSTOMER-NAME** directly (without a subscript), and that causes the error. So before we add any new logic, let’s initialize your users properly so you can access them with subscripts like **CUSTOMER-NAME(1)**.
 
