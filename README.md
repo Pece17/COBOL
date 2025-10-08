@@ -7,6 +7,7 @@ A project for learning the basics of **COBOL** (Common Business-Oriented Languag
 
 - [Software Installation and Setup](https://github.com/Pece17/COBOL?tab=readme-ov-file#software-installation-and-setup)
 - [Creating a Customer Greeting Program](https://github.com/Pece17/COBOL?tab=readme-ov-file#creating-a-customer-greeting-program)
+- [Creating a "Mini Bank"]()
 
 
 ## Software Installation and Setup
@@ -433,4 +434,9 @@ Finally, we add **END PROGRAM <program-name>** that explicitly marks the end of 
 The program still works correctly. A stunning success that concludes this exercise.
 
 
-## Placeholder Title (developing the previous program further? Menus or loops, conditional greetings, age?)
+## Creating a "Mini Bank"
+
+I want to build on the program I created in the previous section and make additions that in theory could have real-world business applications.
+
+I ask **ChatGPT** for suggestions, and this is what I get: add input validation, a looping menu, subroutines/paragraphs, date and time handling, file I/O (input/output), conditional logic based on data, use of copybooks, structured error handling and logging, and data storage. I'm personally also thinking about the abilities to withdraw and deposit money and to check balance, so I suppose the goal would be to make a "mini bank". I'm thinking a few users that require passwords for login.
+
