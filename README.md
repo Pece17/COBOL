@@ -450,7 +450,40 @@ I ask **ChatGPT** for suggestions, and this is what I get:
 - structured error handling and logging
 - data storage
 
-I'm personally also thinking about the abilities to withdraw and deposit money and to check balance, so I suppose the goal would be to make a "mini bank". I'm thinking a few users that require passwords for login. Let's get started.
+I'm personally also thinking about the abilities to withdraw and deposit money, to transfer money to other users' accounts, and to check balance, so I suppose the goal would be to make a "mini bank". I'm thinking a few users that require passwords for login. Let's get started.
 
-I create a new file called **MINI-BANK.cbl** and paste the code of **CUSTOMER-GREETING.cbl** in it.
+I create a new file called **MINI-BANK.cbl** and paste the code of **CUSTOMER-GREETING.cbl** in it. I make a few changes to the header:
 
+```
+      ******************************************************************
+      * Author: Pekka Surname
+      * Date: 2025-10-07
+      * Version: 1.0
+      * Purpose: A program that works as a miniature banking system.
+      * Compiler: cobc
+      * Remarks: A simple tutorial example for learning COBOL.
+      *          A small banking system with various account operations.
+      * Dependencies: None
+      ******************************************************************
+       
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. CUSTOMER-GREETING.
+       
+       ENVIRONMENT DIVISION.
+       
+       INPUT-OUTPUT SECTION.
+      * No external files used in this simple example
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01  CUSTOMER-NAME        PIC X(30).
+       
+       PROCEDURE DIVISION.
+       MAIN-PROCEDURE.
+           DISPLAY "Please enter your name: ".
+           ACCEPT CUSTOMER-NAME.
+           DISPLAY "Hello, " FUNCTION TRIM(CUSTOMER-NAME) "!".
+           STOP RUN.
+       END PROGRAM CUSTOMER-GREETING.
+
+```
