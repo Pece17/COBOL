@@ -612,4 +612,152 @@ Now I get the following error: **'CUSTOMER-NAME' requires one subscript**.
 
 ```
 
-I get the following error: **'NUM' is not defined**. **ChatGPT** can't seem to get past this issue even after multiple tries, even when it confidently claims that the code should now work perfectly after each iteration. My conclusion is that—as it stands—the free version of **ChatGPT** is good for creating simple **COBOL** codes, but it struggles with larger programs. At this point I feel like it's better to pivot to watching YouTube tutorials and reading manuals instead of spending time with something that doesn't seem to work, if I want to learn **COBOL**. Though, **ChatGPT** can still be useful with problem-solving in many cases.
+I get the following error: **'NUM' is not defined**. At this point I'm eager to see what a fully working mini bank program would look like, so I ask **ChatGPT** to code it for me. It takes a few iterations to iron out the errors, but eventually the program starts working. I cannot claim any credit for the following code:
+
+```
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. MINI-BANK.
+
+       ENVIRONMENT DIVISION.
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+
+       01 NUM-USERS       PIC 9 VALUE 3.
+       01 USER-INDEX      PIC 9 VALUE 1.
+
+       *> Users
+       01 USER1-NAME      PIC X(30) VALUE "PEKKA".
+       01 USER1-PASS      PIC X(10) VALUE "PASS1".
+       01 USER1-BALANCE   PIC 9(4)V99 VALUE 1000.50.
+
+       01 USER2-NAME      PIC X(30) VALUE "ANNA".
+       01 USER2-PASS      PIC X(10) VALUE "PASS2".
+       01 USER2-BALANCE   PIC 9(4)V99 VALUE 2500.00.
+
+       01 USER3-NAME      PIC X(30) VALUE "MIKA".
+       01 USER3-PASS      PIC X(10) VALUE "PASS3".
+       01 USER3-BALANCE   PIC 9(4)V99 VALUE 1000.50.
+
+       *> Temporary and control variables
+       01 WS-DISPLAY-BALANCE PIC 9(4).99 VALUE 0.
+       01 WS-USERNAME       PIC X(30).
+       01 WS-PASSWORD       PIC X(10).
+       01 WS-AMOUNT-ALPHA   PIC X(10).
+       01 WS-AMOUNT         PIC 9(4)V99 VALUE 0.
+       01 WS-OPTION         PIC 9 VALUE 0.
+       01 WS-FOUND          PIC 9 VALUE 0.
+
+       PROCEDURE DIVISION.
+       MAIN-PROCEDURE.
+
+           DISPLAY "Welcome to MINI-BANK!"
+           PERFORM LOGIN-PROCEDURE
+           PERFORM BANKING-OPERATIONS
+           DISPLAY "Thank you for using MINI-BANK."
+           STOP RUN.
+
+       *>========================
+       LOGIN-PROCEDURE.
+           MOVE 0 TO WS-FOUND
+           PERFORM UNTIL WS-FOUND = 1
+               DISPLAY "Enter username: "
+               ACCEPT WS-USERNAME
+               DISPLAY "Enter password: "
+               ACCEPT WS-PASSWORD
+
+               IF WS-USERNAME = USER1-NAME AND WS-PASSWORD = USER1-PASS
+                   MOVE 1 TO USER-INDEX
+                   MOVE 1 TO WS-FOUND
+               ELSE IF WS-USERNAME = USER2-NAME AND WS-PASSWORD = USER2-PASS
+                   MOVE 2 TO USER-INDEX
+                   MOVE 1 TO WS-FOUND
+               ELSE IF WS-USERNAME = USER3-NAME AND WS-PASSWORD = USER3-PASS
+                   MOVE 3 TO USER-INDEX
+                   MOVE 1 TO WS-FOUND
+               ELSE
+                   DISPLAY "Invalid username or password, try again."
+               END-IF
+           END-PERFORM.
+
+       *>========================
+       BANKING-OPERATIONS.
+           PERFORM UNTIL WS-OPTION = 3
+               DISPLAY "Select option: "
+               DISPLAY "1 - Show Balance"
+               DISPLAY "2 - Deposit/Withdraw"
+               DISPLAY "3 - Exit"
+               ACCEPT WS-OPTION
+
+               EVALUATE WS-OPTION
+                   WHEN 1
+                       PERFORM SHOW-BALANCE
+                   WHEN 2
+                       PERFORM TRANSACTIONS
+                   WHEN 3
+                       CONTINUE
+                   WHEN OTHER
+                       DISPLAY "Invalid option."
+               END-EVALUATE
+           END-PERFORM.
+
+       *>========================
+       SHOW-BALANCE.
+           EVALUATE USER-INDEX
+               WHEN 1
+                   MOVE USER1-BALANCE TO WS-DISPLAY-BALANCE
+               WHEN 2
+                   MOVE USER2-BALANCE TO WS-DISPLAY-BALANCE
+               WHEN 3
+                   MOVE USER3-BALANCE TO WS-DISPLAY-BALANCE
+           END-EVALUATE
+           DISPLAY "Current Balance: " WS-DISPLAY-BALANCE.
+
+       *>========================
+       TRANSACTIONS.
+           DISPLAY "Select transaction type:"
+           DISPLAY "1 - Deposit"
+           DISPLAY "2 - Withdraw"
+           ACCEPT WS-OPTION
+
+           DISPLAY "Enter amount (e.g., 100.50): "
+           ACCEPT WS-AMOUNT-ALPHA
+           MOVE FUNCTION NUMVAL(WS-AMOUNT-ALPHA) TO WS-AMOUNT
+
+           EVALUATE USER-INDEX
+               WHEN 1
+                   IF WS-OPTION = 1
+                       ADD WS-AMOUNT TO USER1-BALANCE
+                   ELSE IF WS-OPTION = 2
+                       IF WS-AMOUNT > USER1-BALANCE
+                           DISPLAY "Insufficient funds."
+                       ELSE
+                           SUBTRACT WS-AMOUNT FROM USER1-BALANCE
+                       END-IF
+                   END-IF
+               WHEN 2
+                   IF WS-OPTION = 1
+                       ADD WS-AMOUNT TO USER2-BALANCE
+                   ELSE IF WS-OPTION = 2
+                       IF WS-AMOUNT > USER2-BALANCE
+                           DISPLAY "Insufficient funds."
+                       ELSE
+                           SUBTRACT WS-AMOUNT FROM USER2-BALANCE
+                       END-IF
+                   END-IF
+               WHEN 3
+                   IF WS-OPTION = 1
+                       ADD WS-AMOUNT TO USER3-BALANCE
+                   ELSE IF WS-OPTION = 2
+                       IF WS-AMOUNT > USER3-BALANCE
+                           DISPLAY "Insufficient funds."
+                       ELSE
+                           SUBTRACT WS-AMOUNT FROM USER3-BALANCE
+                       END-IF
+                   END-IF
+           END-EVALUATE
+
+           DISPLAY "Transaction complete."
+           PERFORM SHOW-BALANCE.
+
+```
