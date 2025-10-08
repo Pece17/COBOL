@@ -612,4 +612,4 @@ Now I get the following error: **'CUSTOMER-NAME' requires one subscript**.
 
 ```
 
-I get the following error: ** 'NUM' is not defined**.
+I get the following error: **'NUM' is not defined**.
