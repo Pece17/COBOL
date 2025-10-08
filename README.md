@@ -8,6 +8,7 @@ A project for learning the basics of **COBOL** (Common Business-Oriented Languag
 - [Software Installation and Setup](https://github.com/Pece17/COBOL?tab=readme-ov-file#software-installation-and-setup)
 - [Creating a Customer Greeting Program](https://github.com/Pece17/COBOL?tab=readme-ov-file#creating-a-customer-greeting-program)
 - [Creating a "Mini Bank"](https://github.com/Pece17/COBOL/tree/main?tab=readme-ov-file#creating-a-mini-bank)
+     - [Adding User Accounts and Balances in **WORKING-STORAGE**]
 
 
 ## Software Installation and Setup
@@ -487,3 +488,7 @@ I create a new file called **MINI-BANK.cbl** and paste the code of **CUSTOMER-GR
        END PROGRAM CUSTOMER-GREETING.
 
 ```
+
+
+### Adding User Accounts and Balances in **WORKING-STORAGE**
+
