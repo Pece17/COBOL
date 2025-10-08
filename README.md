@@ -494,9 +494,9 @@ I create a new file called **MINI-BANK.cbl** and paste the code of **CUSTOMER-GR
 
 Per **ChatGPT**: since we don't have files yet, we'll keep a small, fixed set of users in memory. Each user will have:
 
-- Username (**CUSTOMER-NAME**)
-- Password (**CUSTOMER-PASSWORD**)
-- Balance (**ACCOUNT-BALANCE**)
+- username (**CUSTOMER-NAME**)
+- password (**CUSTOMER-PASSWORD**)
+- balance (**ACCOUNT-BALANCE**)
 
 Here's how we can define that in the **WORKING-STORAGE SECTION**:
 
@@ -549,5 +549,67 @@ Here's how we can define that in the **WORKING-STORAGE SECTION**:
 
 Now I get the following error: **'CUSTOMER-NAME' requires one subscript**.
 
-**ChatGPT** says: you currently have a user table defined, but you’re trying to use **CUSTOMER-NAME** directly (without a subscript), and that causes the error. So before we add any new logic, let’s initialize your users properly so you can access them with subscripts like **CUSTOMER-NAME(1)**.
+**ChatGPT** says: you currently have a user table defined, but you’re trying to use **CUSTOMER-NAME** directly (without a subscript), and that causes the error. So before we add any new logic, let’s initialize your users properly so you can access them with subscripts like **CUSTOMER-NAME(1)**. I do that and comment out the main procedure of **CUSTOMER-GREETING.cbl**, because it might cause issues with this new program. It is somewhat difficult to try to use **ChatGPT** as an instructor when creating a program because the AI will sometimes change things without notifying, is occasionally inconsistent and doesn't remember my requests, or moves too fast with the coding. Here's my current code:
 
+```
+      ******************************************************************
+      * Author: Pekka Surname
+      * Date: 2025-10-07
+      * Version: 1.0
+      * Purpose: A program that works as a miniature banking system.
+      * Compiler: cobc
+      * Remarks: A simple tutorial example for learning COBOL.
+      *          A small banking system with various account operations.
+      * Dependencies: None
+      ******************************************************************
+       
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. MINI-BANK.
+       
+       ENVIRONMENT DIVISION.
+       
+       INPUT-OUTPUT SECTION.
+      * No external files used in this simple example
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       
+       01  NUM-USERS        PIC 9 VALUE 3.
+       01  USER-INDEX       PIC 9 VALUE 1.
+       
+       01  USER-TABLE.
+           05 USERS OCCURS 3 TIMES.
+              10 CUSTOMER-NAME      PIC X(30).
+              10 CUSTOMER-PASSWORD  PIC X(10).
+              10 ACCOUNT-BALANCE    PIC 9(6)V99 VALUE 0.
+       
+       PROCEDURE DIVISION.
+       MAIN-PROCEDURE.
+           
+      *    DISPLAY "Please enter your name: ".
+      *    ACCEPT CUSTOMER-NAME.
+      *    DISPLAY "Hello, " FUNCTION TRIM(CUSTOMER-NAME) "!".
+       
+           MOVE "PEKKA" TO CUSTOMER-NAME(1).
+           MOVE "PASS1" TO CUSTOMER-PASSWORD(1).
+           MOVE 1000.50 TO ACCOUNT-BALANCE(1).
+           
+           MOVE "ANNA" TO CUSTOMER-NAME(2).
+           MOVE "PASS2" TO CUSTOMER-PASSWORD(2).
+           MOVE 2500.00 TO ACCOUNT-BALANCE(2).
+           
+           MOVE "MIKA" TO CUSTOMER-NAME(3).
+           MOVE "PASS3" TO CUSTOMER-PASSWORD(3).
+           MOVE 1000.50 TO ACCOUNT-BALANCE(3).
+           
+           PERFORM VARYING USER-INDEX FROM 1 BY 1 UNTIL USER-INDEX > NUM-USERS
+               DISPLAY "User: " CUSTOMER-NAME(USER-INDEX)
+               DISPLAY "Balance: " ACCOUNT-BALANCE(USER-INDEX)
+           END-PERFORM
+       
+           STOP RUN.
+       END PROGRAM MINI-BANK.
+
+```
+
+I get the following error: ** 'NUM' is not defined**.
