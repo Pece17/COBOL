@@ -3,6 +3,12 @@
 A project for learning the basics of **COBOL** (Common Business-Oriented Language). The purpose of this project is to learn to write production-grade **COBOL** in a way that is, in theory, applicable in business environments.
 
 
+## Table of Contents
+
+- [Software Installation and Setup](https://github.com/Pece17/COBOL?tab=readme-ov-file#software-installation-and-setup)
+- [Creating a Customer Greeting Program](https://github.com/Pece17/COBOL?tab=readme-ov-file#creating-a-customer-greeting-program)
+
+
 ## Software Installation and Setup
 
 I'm using [this YouTube tutorial](https://www.youtube.com/watch?v=LImuEAmVkIw) by **Kumar ITChannel** as the basis of this project. I'm also using **ChatGPT** as a teacher during this project.
